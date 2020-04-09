@@ -21,14 +21,34 @@
         // alert( isEmpty(schedule) ); // false
 
         // #3
-        let salaries = {
-        John: 100,
-        Ann: 160,
-        Pete: 130
-        }
-        let sum = 0; 
-        for(let key in salaries){
-            sum+=salaries[key];
-        } 
-        alert(sum);
+        // let salaries = {
+        // John: 100,
+        // Ann: 160,
+        // Pete: 130
+        // }
+        // let sum = 0; 
+        // for(let key in salaries){
+        //     sum+=salaries[key];
+        // } 
+        // alert(sum);
+
+        // #4
+        function multiplyNumeric(menu){
+                    for(let key in menu){
+                        if(+menu[key]){
+                            
+                            menu[key]+=menu[key];
+                        }
+                        
+                    }
+                }
+        let menu = {
+        width: 200,
+        height: 300,
+        title: "My menu"
+        };
+        multiplyNumeric(menu);
+        for(let key in menu){
+                console.log(key+"  :  "+menu[key])
+            }
     </script>
