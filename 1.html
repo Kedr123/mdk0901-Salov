@@ -33,22 +33,45 @@
         // alert(sum);
 
         // #4
-        function multiplyNumeric(menu){
-                    for(let key in menu){
-                        if(+menu[key]){
+        // function multiplyNumeric(menu){
+        //             for(let key in menu){
+        //                 if(+menu[key]){
                             
-                            menu[key]+=menu[key];
-                        }
+        //                     menu[key]+=menu[key];
+        //                 }
                         
-                    }
-                }
-        let menu = {
-        width: 200,
-        height: 300,
-        title: "My menu"
-        };
-        multiplyNumeric(menu);
-        for(let key in menu){
-                console.log(key+"  :  "+menu[key])
+        //             }
+        //         }
+        // let menu = {
+        // width: 200,
+        // height: 300,
+        // title: "My menu"
+        // };
+        // multiplyNumeric(menu);
+        // for(let key in menu){
+        //         console.log(key+"  :  "+menu[key])
+        //     }
+
+        // #5
+        function prom(spkmo) {
+                  if("students" in spkmo){
+                       return spkmo["students"];
+                  }
+                  else{
+                      for(let key in spkmo){
+                         t=prom(spkmo[key]); 
+                        if(t)n+= t;   
+                      }
+                  }
+               }
+
+
+        let spkmo= {
+                ras: [{ name: "ras077", students: 22  }, {name: "ras067", students: 20 }], isp: { sites: [{ name:"isp079", students: 30 }, { name: "isp089", students: 27 }], pi: [{ name: "pi0089", students: 25 }]
             }
+        };
+        let n = 0;
+        let t = 0;
+        prom(spkmo,n);
+        console.log(n)
     </script>
