@@ -50,7 +50,12 @@ document.querySelector('button').addEventListener("click", function (){
     let t = 10;
     let n = random(1, 100);
     console.log("Загаданое число "+n);
-    let x = prompt("Угодайте число",);
+    let x = 0;
+    if(!(x = prompt("Угодайте число",))){
+      alert("Досвидания!");
+      return function(){};
+    }
+     
     t--;    
     return function fun() {
       if((t>0)||(n==x)){  
@@ -58,18 +63,17 @@ document.querySelector('button').addEventListener("click", function (){
           return;
         }
         else if(!+x) {
-          x = prompt("Ввидите число!",)
-          return fun();
+          if (x = prompt("Ввидите число!",)) return fun();
+          
+          
         }
         else if(x>n){
           t--;
-          x = prompt("Загаданное число меньше, осталось попыток - "+(t+1),)
-          return fun();
+          if(x = prompt("Загаданное число меньше, осталось попыток - "+(t+1),)) return fun();
         }
         else if(x<n){
           t--;
-          x = prompt("Загаданное число больше, осталось попыток - "+(t+1),)
-          return fun();
+          if(x = prompt("Загаданное число больше, осталось попыток - "+(t+1),)) return fun();
         }
         else if(n==x){
           if(confirm("Поздравляю! Вы угодали число, хотите сыграть еще?")){
@@ -79,7 +83,10 @@ document.querySelector('button').addEventListener("click", function (){
           x = prompt("Угодайте число",);
           return fun();
           }
+          else{
+          }
         }
+        alert("Досвидания!");
       }
       else{
         if(confirm("Попытки закончились, хотите сыграть еще?")){
@@ -88,6 +95,9 @@ document.querySelector('button').addEventListener("click", function (){
           console.log("Загаданое число "+n);
           x = prompt("Угодайте число",);
           return fun();
+        }
+        else{
+          alert("Досвидания!");
         }
 
       }
