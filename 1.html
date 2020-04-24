@@ -1,5 +1,5 @@
 <!-- 1 -->
-<ul>
+<!-- <ul>
   <li>Один</li>
   <li>Два</li>
   <li>Три</li>
@@ -11,11 +11,29 @@
 <button >Добавить li</button>
 
 <script>
-document.querySelector('button').addEventListener("click", function (){
+// document.querySelector('button').addEventListener("click", function (){
 
- let list = document.querySelector('ul');
- let elm = document.createElement('li')
- elm.textContent = document.querySelector("input").value;
- list.append(elm);
-});
+//  let list = document.querySelector('ul');
+//  let elm = document.createElement('li')
+//  elm.textContent = document.querySelector("input").value;
+//  list.append(elm);
+// });
+</script> -->
+
+<!-- 2 -->
+<input type="button" value="Сменить цвет">
+
+<script>
+
+  function randColor() {
+    let r = Math.floor(Math.random() * (256));
+    let g = Math.floor(Math.random() * (256));
+    let b = Math.floor(Math.random() * (256));
+    return '#' + r.toString(16) + g.toString(16) + b.toString(16);
+  
+  }
+   document.querySelector('input').addEventListener("click", function (){
+  let fon = document.querySelector("body")
+  fon.style.background = randColor();
+   });
 </script>
