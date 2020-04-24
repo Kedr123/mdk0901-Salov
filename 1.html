@@ -1,0 +1,21 @@
+<!-- 1 -->
+<ul>
+  <li>Один</li>
+  <li>Два</li>
+  <li>Три</li>
+  <li>Четыре</li>
+</ul>
+
+<input type="text">
+
+<button >Добавить li</button>
+
+<script>
+document.querySelector('button').addEventListener("click", function (){
+
+ let list = document.querySelector('ul');
+ let elm = document.createElement('li')
+ elm.textContent = document.querySelector("input").value;
+ list.append(elm);
+});
+</script>
