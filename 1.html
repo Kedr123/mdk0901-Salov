@@ -11,17 +11,17 @@
 <button >Добавить li</button>
 
 <script>
-// document.querySelector('button').addEventListener("click", function (){
+document.querySelector('button').addEventListener("click", function (){
 
-//  let list = document.querySelector('ul');
-//  let elm = document.createElement('li')
-//  elm.textContent = document.querySelector("input").value;
-//  list.append(elm);
-// });
+ let list = document.querySelector('ul');
+ let elm = document.createElement('li')
+ elm.textContent = document.querySelector("input").value;
+ list.append(elm);
+});
 </script> -->
 
 <!-- 2 -->
-<input type="button" value="Сменить цвет">
+<!-- <input type="button" value="Сменить цвет">
 
 <script>
 
@@ -36,4 +36,65 @@
   let fon = document.querySelector("body")
   fon.style.background = randColor();
    });
+</script> -->
+
+<!-- 3 -->
+
+<script>
+  
+    function random(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function nadFun(){
+    let t = 10;
+    let n = random(1, 100);
+    console.log("Загаданое число "+n);
+    let x = prompt("Угодайте число",);
+    t--;    
+    return function fun() {
+      if((t>0)||(n==x)){  
+        if(x===null){
+          return;
+        }
+        else if(!+x) {
+          x = prompt("Ввидите число!",)
+          return fun();
+        }
+        else if(x>n){
+          t--;
+          x = prompt("Загаданное число меньше, осталось попыток - "+(t+1),)
+          return fun();
+        }
+        else if(x<n){
+          t--;
+          x = prompt("Загаданное число больше, осталось попыток - "+(t+1),)
+          return fun();
+        }
+        else if(n==x){
+          if(confirm("Поздравляю! Вы угодали число, хотите сыграть еще?")){
+          t=9
+          n = random(1, 100);
+          console.log("Загаданое число "+n);
+          x = prompt("Угодайте число",);
+          return fun();
+          }
+        }
+      }
+      else{
+        if(confirm("Попытки закончились, хотите сыграть еще?")){
+          t=9
+          n = random(1, 100);
+          console.log("Загаданое число "+n);
+          x = prompt("Угодайте число",);
+          return fun();
+        }
+
+      }
+  }
+}   
+       
+let bot = nadFun();
+bot();
+
 </script>
